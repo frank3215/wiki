@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>主观Bayes方法: frank3215的TiddlyWiki
+
+— a non-linear personal web notebook
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E5%85%AC%E5%BC%80 tc-tagged-%E7%AC%94%E8%AE%B0" data-tags="公开 笔记" data-tiddler-title="主观Bayes方法"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">主观Bayes方法</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div>
+
+<div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>27th October 2022 at 6:49pm</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="笔记">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+笔记
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="公开">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007f00;
+fill:#ffffff;
+color:#ffffff;">
+<svg class="tc-image-preview-open tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M64.11 99.588c-24.83 0-47.754-11.596-62.534-30.957a7.148 7.148 0 010-8.675C16.356 40.596 39.28 29 64.11 29c24.83 0 47.753 11.596 62.534 30.956a7.148 7.148 0 010 8.675c-14.78 19.36-37.703 30.957-62.534 30.957zm46.104-32.007c1.44-1.524 1.44-3.638 0-5.162C99.326 50.9 82.439 44 64.147 44S28.968 50.9 18.08 62.42c-1.44 1.523-1.44 3.637 0 5.16C28.968 79.1 45.855 86 64.147 86s35.179-6.9 46.067-18.42z"></path><path d="M63.5 88C76.479 88 87 77.479 87 64.5S76.479 41 63.5 41 40 51.521 40 64.5 50.521 88 63.5 88z"></path></g></svg>公开
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<table></table><div class="tc-tiddler-body tc-reveal"><h2 class=""><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E4%25B8%25BB%25E8%25A7%2582Bayes%25E8%25A7%2584%25E5%2588%2599.html">主观Bayes规则</a></h2><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2585%2585%25E5%2588%2586%25E4%25BC%25BC%25E7%2584%25B6%25E6%2580%25A7.html">充分似然性</a>$$LS = \frac{P(E|H)}{P(E|\neg H)}$$<ul><li>表示E对H的支持程度</li></ul></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%25BF%2585%25E7%2584%25B6%25E4%25BC%25BC%25E7%2584%25B6%25E6%2580%25A7.html">必然似然性</a>：$$LN = \frac{P(\neg E|H)}{P(\neg E|\neg H)}$$<ul><li>表示~E对H的支持程度</li></ul></li></ul><p>在实践中，LS和LN通常由专家据经验给出。</p><h2 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2587%25A0%25E7%258E%2587%25E5%2587%25BD%25E6%2595%25B0.html">几率函数</a></h2><p>表示出现的概率与不出现的概率之比，即</p><p>$$
+O(X) = \frac{P(X)}{P(\neg X))} = \frac{P(X)}{1 - P(X)}
+$$</p><p>$$
+O(H|E) = \frac{P(H|E)}{P(\neg H|E))} = \frac{P(H|E)}{1 - P(H|E)}
+$$</p><p>其中$$O(X)$$称为先验几率，$$O(H|E)$$称为后验几率。</p><p>若已知<a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2585%2585%25E5%2588%2586%25E4%25BC%25BC%25E7%2584%25B6%25E6%2580%25A7.html">充分似然性</a>$$LS$$与<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%2585%2588%25E9%25AA%258C%25E5%2587%25A0%25E7%258E%2587.html">先验几率</a>$$O(H)$$，有<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%2590%258E%25E9%25AA%258C%25E5%2587%25A0%25E7%258E%2587.html">后验几率</a></p><p>$$
+O(H|E) = \frac{P(H|E)}{P(\neg H|E)} = LS \times O(H)
+$$</p><p>显然有：</p><p>$$
+P(X) = \frac{O(X)}{1 + O(X)}
+$$</p><h2 class="">LS和LN的性质</h2><ul><li>LS反映的是E存在时，对H为真的影响程度。<ul><li>当 $$LS &gt; 1$$，$$O(H|E) &gt; O(H)$$，说明 $$E$$ 支持 $$H$$。</li><li>当 $$LS = 1$$，$$O(H|E) = O(H)$$，说明 $$E$$ 对 $$H$$ 没有影响。</li><li>当 $$LS &lt; 1$$，$$O(H|E) = O(H)$$，说明 $$E$$ 不支持 $$H$$。</li></ul></li><li>LS反映的是E不存在时，对H为真的影响程度。</li><li>$$LS$$和$$LN$$始终有一个$$\ge 1$$，有一个$$\le 1$$</li></ul><p>证据的不确定性表示</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%2585%25A8%25E8%25AF%2581%25E6%258D%25AE.html">全证据</a>（<a class="tc-tiddlylink tc-tiddlylink-missing" href="CompleteEvidence.html">CompleteEvidence</a>）$$E$$：所有的证据和假设</li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E9%2583%25A8%25E5%2588%2586%25E8%25AF%2581%25E6%258D%25AE.html">部分证据</a>（<a class="tc-tiddlylink tc-tiddlylink-missing" href="PartialEvidence.html">PartialEvidence</a>/<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E8%25A7%2582%25E5%25AF%259F.html">观察</a>）$$S$$：知道的E的一部分</li></ul><p>不确定性的更新</p><p>$$
+P(H|E) = 
+$$</p><p>[TODO]</p><h2 class="">贝叶斯网络</h2><p>[TODO]</p><h2 class="">证据理论</h2><ul><li>“由Dempster首先提出，并由他的学生Shafer发展起来，也称D-S理论。在专家系统的不精确推理中已得到广泛的应用”</li><li>主要涉及概念：<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E6%25A6%2582%25E7%258E%2587%25E5%2588%2586%25E9%2585%258D%25E5%2587%25BD%25E6%2595%25B0.html">概率分配函数</a>、<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E4%25BF%25A1%25E4%25BB%25BB%25E5%2587%25BD%25E6%2595%25B0.html">信任函数</a>、<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E4%25BC%25BC%25E7%2584%25B6%25E5%2587%25BD%25E6%2595%25B0.html">似然函数</a>、<a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E8%25AF%2581%25E6%258D%25AE%25E7%25BB%2584%25E5%2590%2588%25E5%2587%25BD%25E6%2595%25B0.html">证据组合函数</a></li></ul></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><p><hr>反向链接：<ul style="max-height: 250px;overflow-y:auto;"><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%258C%2597%25E4%25BA%25AC%25E5%25A4%25A7%25E5%25AD%25A6%25E8%25AF%25BE%25E7%25A8%258B%252FAI%25E5%25BC%2595%25E8%25AE%25BA%252F20220425.html">北京大学课程/AI引论/20220425</a></li></ul>链接：<ul style="max-height: 250px;overflow-y:auto;"><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E4%25B8%25BB%25E8%25A7%2582Bayes%25E8%25A7%2584%25E5%2588%2599.html">主观Bayes规则</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2585%2585%25E5%2588%2586%25E4%25BC%25BC%25E7%2584%25B6%25E6%2580%25A7.html">充分似然性</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%25BF%2585%25E7%2584%25B6%25E4%25BC%25BC%25E7%2584%25B6%25E6%2580%25A7.html">必然似然性</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2587%25A0%25E7%258E%2587%25E5%2587%25BD%25E6%2595%25B0.html">几率函数</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%2585%2588%25E9%25AA%258C%25E5%2587%25A0%25E7%258E%2587.html">先验几率</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%2590%258E%25E9%25AA%258C%25E5%2587%25A0%25E7%258E%2587.html">后验几率</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%2585%25A8%25E8%25AF%2581%25E6%258D%25AE.html">全证据</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="CompleteEvidence.html">CompleteEvidence</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E9%2583%25A8%25E5%2588%2586%25E8%25AF%2581%25E6%258D%25AE.html">部分证据</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="PartialEvidence.html">PartialEvidence</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E8%25A7%2582%25E5%25AF%259F.html">观察</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E6%25A6%2582%25E7%258E%2587%25E5%2588%2586%25E9%2585%258D%25E5%2587%25BD%25E6%2595%25B0.html">概率分配函数</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E4%25BF%25A1%25E4%25BB%25BB%25E5%2587%25BD%25E6%2595%25B0.html">信任函数</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E4%25BC%25BC%25E7%2584%25B6%25E5%2587%25BD%25E6%2595%25B0.html">似然函数</a></li><li style="display:inline-flex;background-color: rgba(240, 240, 240, 0.9);font-size: 12px;line-height: 16px;border-radius: 3px;padding: 2px 6px;"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E8%25AF%2581%25E6%258D%25AE%25E7%25BB%2584%25E5%2590%2588%25E5%2587%25BD%25E6%2595%25B0.html">证据组合函数</a></li></ul>field<ul style="max-height: 250px;overflow-y:auto;"></ul>form<ul style="max-height: 250px;overflow-y:auto;"></ul><button aria-expanded="false" class="">Reveal</button><span class=" tc-reveal" hidden="true"></span></p></div></p>
+</section>
+</body>
+</html>
+

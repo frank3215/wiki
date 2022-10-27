@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Emacs Tutorial: frank3215的TiddlyWiki
+
+— a non-linear personal web notebook
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E5%85%AC%E5%BC%80" data-tags="公开" data-tiddler-title="Emacs Tutorial"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Emacs Tutorial</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div>
+
+<div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>27th October 2022 at 6:49pm</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="公开">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007f00;
+fill:#ffffff;
+color:#ffffff;">
+<svg class="tc-image-preview-open tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M64.11 99.588c-24.83 0-47.754-11.596-62.534-30.957a7.148 7.148 0 010-8.675C16.356 40.596 39.28 29 64.11 29c24.83 0 47.753 11.596 62.534 30.956a7.148 7.148 0 010 8.675c-14.78 19.36-37.703 30.957-62.534 30.957zm46.104-32.007c1.44-1.524 1.44-3.638 0-5.162C99.326 50.9 82.439 44 64.147 44S28.968 50.9 18.08 62.42c-1.44 1.523-1.44 3.637 0 5.16C28.968 79.1 45.855 86 64.147 86s35.179-6.9 46.067-18.42z"></path><path d="M63.5 88C76.479 88 87 77.479 87 64.5S76.479 41 63.5 41 40 51.521 40 64.5 50.521 88 63.5 88z"></path></g></svg>公开
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<table></table><div class="tc-tiddler-body tc-reveal"><ul><li><ul><li><code>C-v</code> <code>M-v</code> <code>C-l</code></li><li><code>C-x C-c</code></li><li><code>C-g</code></li><li><code>C-x k</code></li></ul></li><li>Basic Cursor Control:<ul><li><code>C-f</code> <code>C-b</code> <code>M-f</code> <code>M-b</code></li><li><code>C-n</code> <code>C-p</code></li><li><code>C-a</code> <code>C-e</code> <code>M-a</code> <code>M-e</code></li><li><code>M-&lt;</code> <code>M-&gt;</code></li><li><code>C-u &lt;n&gt;</code></li></ul></li><li>If Emacs Stops Responding:<ul><li><code>C-g</code></li></ul></li><li>Disabled Commands</li><li>Windows:<ul><li>(<code>C-h k C-f</code>) <code>C-x 1</code></li></ul></li><li>Inserting and Deleting:<ul><li><code>&lt;DEL&gt;</code> <code>C-d</code> <code>M-&lt;DEL&gt;</code> <code>M-d</code></li><li><code>C-k</code> <code>M-k</code></li><li><code>C-&lt;SPC&gt;</code>(set mark) <code>C-w</code>(delete between cursor and mark)</li><li><code>C-y</code>(yank) <code>M-y</code>(iterate)</li></ul></li><li>Undo<ul><li><code>C-/</code> (<code>C-_</code> <code>C-x u</code>)</li></ul></li><li>Files<ul><li><code>C-x C-f</code>(find a file)</li><li><code>C-x C-s</code>(save a file)</li></ul></li><li>Buffers<ul><li><code>C-x C-b</code>(list buffers)</li><li><code>C-x b &lt;buffer_name&gt;</code>(switch to buffer)</li><li><code>C-x s</code>(save some buffers)</li></ul></li><li>Extending the Command Set<ul><li><code>C-x</code>(character) <code>M-x</code>(name)<ul><li><code>C-x C-c</code>(logout)</li></ul></li><li><code>C-z</code>(exit to terminal–use <code>%emacs</code> or <code>fg</code> to return)</li><li><code>M-x replace-string</code></li></ul></li><li>Auto Save: <code>"#hello.c#"</code></li><li>Echo Area: </li><li>Mode Line:<ul><li><code> -:**-  TUTORIAL       63% L749    (Fundamental)</code></li><li><code>NN%</code> <code>L</code> <code>**</code> <code>Fundamental</code></li><li><code>M-x text-mode</code></li><li><code>C-h m</code></li><li><code>M-x auto-fill-mode</code><ul><li><code>C-x f</code></li><li><code>M-q</code></li></ul></li></ul></li><li>Searching<ul><li><code>C-s</code> <code>C-r</code></li></ul></li><li>Multiple Windows<ul><li><code>C-x 2</code></li><li><code>C-M-v</code></li><li><code>C-x o</code></li><li><code>C-x 4 C-f</code></li></ul></li><li>Multiple Frames<ul><li><code>C-x 5 2</code></li><li><code>C-x 5 0</code></li></ul></li><li>Recursive Editing Levels<ul><li><code>[(Fundamental)]</code></li><li><code>&lt;ESC&gt; &lt;ESC&gt; &lt;ESC&gt;</code></li></ul></li><li>Getting More Help<ul><li><code>C-h ?</code> (<code>&lt;F1&gt;</code> <code>M-x help</code>)</li><li><code>C-h c</code>(command name)</li><li><code>C-h k</code>(documentation)</li><li><code>C-h v</code>(variable)</li><li><code>C-h a</code>(Apropos/reverse search)</li><li><code>C-h i</code>(manual/info file) + <code>m emacs</code>(Emacs Manual)/<code>h</code>(help)</li></ul></li><li>More Features<ul><li>Manual: <code>C-h r</code></li><li>Completion</li><li>Dired</li></ul></li></ul><pre><code>	C-v	Move forward one screenful
+	M-v	Move backward one screenful
+	C-l	Clear screen and redisplay all the text,
+		 moving the text around the cursor
+		 to the center of the screen.
+		 (That's CONTROL-L, not CONTROL-1.)</code></pre><h2 class="">Basic Cursor Control</h2><pre><code>	C-f	Move forward a character
+	C-b	Move backward a character
+
+	M-f	Move forward a word
+	M-b	Move backward a word
+
+	C-n	Move to next line
+	C-p	Move to previous line
+
+	C-a	Move to beginning of line
+	C-e	Move to end of line
+
+	M-a	Move back to beginning of sentence
+	M-e	Move forward to end of sentence</code></pre><pre><code>&gt;&gt; Try M-&lt; now, to move to the beginning of the tutorial.
+   Then use C-v repeatedly to move back here.
+
+&gt;&gt; Try M-&gt; now, to move to the end of the tutorial.
+   Then use M-v repeatedly to move back here.</code></pre><pre><code>For instance, C-u 8 C-f moves forward eight characters.
+
+&gt;&gt; Try using C-n or C-p with a numeric argument, to move the cursor
+   to a line near this one with just one command.</code></pre><pre><code>&gt;&gt; Try typing C-u 8 C-v now.</code></pre><h2 class="">If Emacs Stops Responding</h2><pre><code>&gt;&gt; Type C-u 100 to make a numeric argument of 100, then type C-g.
+   Now type C-f.  It should move just one character, because you
+   canceled the argument with C-g.</code></pre><h2 class="">Disabled Commands</h2><pre><code>&gt;&gt; Type C-x C-l (which is a disabled command),
+   then type n to answer the question.</code></pre><h2 class="">Windows</h2><pre><code>	C-x 1	One window (i.e., kill all other windows).</code></pre><pre><code>&gt;&gt; Move the cursor to this line and type C-u 0 C-l.
+&gt;&gt; Type C-h k C-f.
+   See how this window shrinks, while a new one appears
+   to display documentation on the C-f command.
+
+&gt;&gt; Type C-x 1 and see the documentation listing window disappear.</code></pre><h2 class="">Inserting and Deleting</h2><pre><code>&gt;&gt; Insert text until you reach the right margin, and keep on inserting.
+   You'll see a continuation line appear.
+
+&gt;&gt; Use &lt;DEL&gt;s to delete the text until the line fits on one screen
+   line again.  The continuation line goes away.</code></pre><pre><code>&gt;&gt; Here is an example of &lt;Return&gt; being electric.
+   Type &lt;Return&gt; at the end of this line.
+
+You should see that after inserting the Newline, Emacs inserts spaces
+so that the cursor moves under the "T" of "Type".</code></pre><pre><code>&gt;&gt; Try that now -- type C-u 8 * to insert ********.</code></pre><pre><code>	&lt;DEL&gt;        Delete the character just before the cursor
+	C-d   	     Delete the next character after the cursor
+
+	M-&lt;DEL&gt;      Kill the word immediately before the cursor
+	M-d	     Kill the next word after the cursor
+
+	C-k	     Kill from the cursor position to end of line
+	M-k	     Kill to the end of the current sentence</code></pre><pre><code>&gt;&gt; Move the cursor to the Y at the start of the previous paragraph.
+&gt;&gt; Type C-&lt;SPC&gt;.  Emacs should display a message "Mark set"
+   at the bottom of the screen.
+&gt;&gt; Move the cursor to the n in "end", on the second line of the
+   paragraph.
+&gt;&gt; Type C-w.  This will kill the text starting from the Y,
+   and ending just before the n.</code></pre><pre><code>&gt;&gt; Move the cursor to the beginning of a line which is not empty.
+   Then type C-k to kill the text on that line.
+&gt;&gt; Type C-k a second time.  You'll see that it kills the Newline
+   which follows that line.</code></pre><pre><code>Some other editors call killing and
+yanking "cutting" and "pasting" (see the Glossary in the Emacs
+manual).</code></pre><pre><code>&gt;&gt; Try it; type C-y to yank the text back.</code></pre><pre><code>If you do several C-k's in a row, all of the killed text is saved
+together, so that one C-y will yank all of the lines at once.
+
+&gt;&gt; Do this now, type C-k several times.</code></pre><pre><code>After you have done C-y to get the most recent kill, typing
+M-y replaces that yanked text with the previous kill.</code></pre><h2 class="">Undo</h2><pre><code>If you make a change to the text, and then decide that it was a
+mistake, you can undo the change with the undo command, C-/.</code></pre><pre><code>C-_ is an alternative undo command; it works exactly the same as C-/.
+On some text terminals, you can omit the shift key when you type C-_.
+On some text terminals, typing C-/ actually sends C-_ to Emacs.
+Alternatively, C-x u also works exactly like C-/, but is a little less
+convenient to type.</code></pre><h2 class="">Files</h2><pre><code>	C-x C-f   Find a file</code></pre><pre><code>	C-x C-s   Save the file</code></pre><h2 class="">Buffers</h2><pre><code>	C-x C-b   List buffers</code></pre><pre><code>	C-x s     Save some buffers to their files</code></pre><h2 class="">Extending the command set</h2><pre><code>	C-x	Character eXtend.  Followed by one character.
+	M-x	Named command eXtend.  Followed by a long name.</code></pre><pre><code>	C-x C-f		Find file
+	C-x C-s		Save buffer to file
+	C-x s		Save some buffers to their files
+	C-x C-b		List buffers
+	C-x b		Switch buffer
+	C-x C-c		Quit Emacs
+	C-x 1		Delete all but one window
+	C-x u		Undo</code></pre><h2 class="">Auto Save</h2></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><p><hr>反向链接：<ul style="max-height: 250px;overflow-y:auto;"></ul>链接：<ul style="max-height: 250px;overflow-y:auto;"></ul>field<ul style="max-height: 250px;overflow-y:auto;"></ul>form<ul style="max-height: 250px;overflow-y:auto;"></ul><button aria-expanded="false" class="">Reveal</button><span class=" tc-reveal" hidden="true"></span></p></div></p>
+</section>
+</body>
+</html>
+
