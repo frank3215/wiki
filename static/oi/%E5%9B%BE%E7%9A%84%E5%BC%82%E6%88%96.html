@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>图的异或: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-public tc-tagged-%E5%9B%BE%E8%AE%BA%E6%A8%A1%E5%9E%8B tc-tagged-%E6%90%9C%E7%B4%A2%E6%A0%91" data-tags="public 图论模型 搜索树" data-tiddler-title="图的异或"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">图的异或</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月05日 15:24</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="搜索树">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+搜索树
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="图论模型">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+图论模型
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>例题：<a class="tc-tiddlylink tc-tiddlylink-resolves" href="WC2011%2520-%2520%25E6%259C%2580%25E5%25A4%25A7XOR%25E5%2592%258C%25E8%25B7%25AF%25E5%25BE%2584.html">WC2011 - 最大XOR和路径</a>、<a class="tc-tiddlylink tc-tiddlylink-resolves" href="IOI2007%2520-%2520%25E8%25AE%25AD%25E7%25BB%2583%25E8%25B7%25AF%25E5%25BE%2584.html">IOI2007 - 训练路径</a>。</p><p>性质：</p><ul><li>两个环的异或是（一个或多个）环。（显然）</li><li>任何环都可以表示为多个（边相交的）搜索树上环的异或。（证明只需顺序枚举环上的边即可，参考<a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%25AC%25A7%25E6%258B%2589%25E5%25BA%258F%25E5%2588%2597.html">欧拉序列</a>的性质）</li><li>两点之间的（简单）路径可以表示为搜索树中两点之间的路径异或上一些环。（证明同上）</li></ul></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%25B1%2582%25E5%259B%25BE%25E4%25B8%258A%25E7%259A%2584%25E6%259C%2580%25E5%25A4%25A7%25E5%25BC%2582%25E6%2588%2596%25E5%2592%258C%25E8%25B7%25AF%25E5%25BE%2584.html">求图上的最大异或和路径</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%259B%25BE%25E8%25AE%25BA%25E6%25A8%25A1%25E5%259E%258B.html">图论模型</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%2590%259C%25E7%25B4%25A2%25E6%25A0%2591.html">搜索树</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

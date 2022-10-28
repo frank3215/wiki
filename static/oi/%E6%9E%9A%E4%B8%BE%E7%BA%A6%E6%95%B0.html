@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>枚举约数: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E6%95%B0%E8%AE%BA%E6%8A%80%E5%B7%A7 tc-tagged-public" data-tags="数论技巧 public" data-tiddler-title="枚举约数"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">枚举约数</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>2021年06月28日 09:05</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="数论技巧">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+数论技巧
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>对单个数枚举时<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msqrt><mi>n</mi></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\sqrt n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="padding-left:0.833em;">n</span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span>的。</p><p>若对所有整数枚举，则等价于枚举倍数，用类似筛法的方式可以做到<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></span>。</p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%25B1%2582%25E4%25BD%25BF%25E5%25BE%2597%25E5%2589%258Dk%25E4%25B8%25AA%25E6%25AD%25A3%25E6%2595%25B4%25E6%2595%25B0%25E5%2592%258C%25E4%25B8%25BAn%25E7%259A%2584%25E5%2580%258D%25E6%2595%25B0%25E7%259A%2584%25E6%259C%2580%25E5%25B0%258F%25E6%2595%25B4%25E6%2595%25B0k.html">求使得前k个正整数和为n的倍数的最小整数k</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%2595%25B0%25E8%25AE%25BA%25E6%258A%2580%25E5%25B7%25A7.html">数论技巧</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

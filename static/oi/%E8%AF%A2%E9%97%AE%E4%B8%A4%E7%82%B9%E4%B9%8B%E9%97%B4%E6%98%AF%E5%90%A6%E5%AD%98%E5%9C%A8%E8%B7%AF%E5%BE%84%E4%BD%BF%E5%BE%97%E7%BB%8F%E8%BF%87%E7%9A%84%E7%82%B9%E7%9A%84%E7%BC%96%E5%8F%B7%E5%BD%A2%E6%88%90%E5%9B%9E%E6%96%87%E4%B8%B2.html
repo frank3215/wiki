@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>询问两点之间是否存在路径使得经过的点的编号形成回文串: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E5%9B%9E%E6%96%87 tc-tagged-public tc-tagged-%E5%8C%96%E4%B8%BA%E5%AD%90%E9%97%AE%E9%A2%98 tc-tagged-BFS tc-tagged-%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6%E7%9A%84%E5%A5%87%E5%81%B6%E6%80%A7" data-tags="回文 public 化为子问题 BFS 路径长度的奇偶性" data-tiddler-title="询问两点之间是否存在路径使得经过的点的编号形成回文串"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">询问两点之间是否存在路径使得经过的点的编号形成回文串</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月08日 19:11</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="化为子问题">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+化为子问题
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="回文">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+回文
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="路径长度的奇偶性">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+路径长度的奇偶性
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="BFS">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+BFS
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><h2 class="">题目：<a class="tc-tiddlylink tc-tiddlylink-resolves" href="HNOI2019%2520-%2520%25E6%25A0%25A1%25E5%259B%25AD%25E6%2597%2585%25E8%25A1%258C.html">HNOI2019 - 校园旅行</a></h2><p>与子问题的等价性的证明：（长度为大于一的同颜色串容易通过调整证明其在原问题和子问题的存在性等价。只需考虑长度为一的同颜色串——</p><ol><li>若子问题有解，则原问题必定有解：长度为一的串对应的点相邻的边在原问题中必然存在，不需要调整。</li><li>若原问题有解，则子问题必定有解：长度为一的串（设为<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span>）对应的点相邻的边可能遭到删除，可以将<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>01</mn></mrow><annotation encoding="application/x-tex">01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span></span></span></span></span>延长成<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>010101</mn></mrow><annotation encoding="application/x-tex">010101</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span></span></span></span></span>证明。</li></ol></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class="">无</ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E5%259B%259E%25E6%2596%2587.html">回文</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%258C%2596%25E4%25B8%25BA%25E5%25AD%2590%25E9%2597%25AE%25E9%25A2%2598.html">化为子问题</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="BFS.html">BFS</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E8%25B7%25AF%25E5%25BE%2584%25E9%2595%25BF%25E5%25BA%25A6%25E7%259A%2584%25E5%25A5%2587%25E5%2581%25B6%25E6%2580%25A7.html">路径长度的奇偶性</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

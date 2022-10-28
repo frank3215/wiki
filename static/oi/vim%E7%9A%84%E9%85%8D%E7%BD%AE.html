@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>vim的配置: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-public tc-tagged-vim tc-tagged-todo" data-tags="public vim todo" data-tiddler-title="vim的配置"><p><div align="right">
+<strong><em>如你所见，这个条目还在施工中，还请耐心等待。</em></strong>
+</div></p><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">vim的配置</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月10日 10:43</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="todo">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+todo
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="vim">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+vim
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>由于vim尽管默认有代码高亮，但是有不显示行号，一个tab是8个空格等等问题。我们需要通过编辑vim的配置文件，才能把vim配置得像一个IDE的编辑模式。</p><blockquote class="tc-quote"><p>对于不清楚有什么作用的选项，除了可以用<code>:help &lt;选项&gt;</code>搜索，也可以看一些博客讲解，比如洛谷的<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/blog/Tiger3018/vim-basic-learning" rel="noopener noreferrer" target="_blank">这篇日报</a>。</p><p>如果你有兴趣，可以尝试<code>:help 05.9</code>来查找常用选项。
+</p></blockquote><h1 class="">有关在保存.vimrc后自动source的事</h1><p>如果你只是用<code>au BufWritePost .vimrc so %</code>来这么做，随着保存<code>.vimrc</code>的次数增加，你的vim 会  逐   渐    变     卡。</p><p>这是因为你每source一次又会新加载一句<code>au BufWritePost .vimrc so %</code>，使得每一次保存都会source若干遍！</p><p>我们可以使用augroup来阻止这件事情的发生（<code>:h</code>）。</p><pre class="vim hljs"><code><span class="hljs-keyword">augroup</span> VIMRC
+    au!
+    <span class="hljs-keyword">au</span> BufWritePost .vimrc <span class="hljs-keyword">so</span> %
+<span class="hljs-keyword">augroup</span> END</code></pre><p>这个命令的主要意思是：把自动source的命令包含在了一个组里，每次source .vimrc的时候都会先把组里的autocmd清空。</p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="colorscheme.html">颜色配置</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="undofile.html">可持久化撤销</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="vim%25E7%259A%2584%25E5%2588%259D%25E6%25AD%25A5%25E9%2585%258D%25E7%25BD%25AE.html">vim的初步配置</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E4%25B8%2580%25E9%2594%25AE%25E7%25BC%2596%25E8%25AF%2591%25E8%25BF%2590%25E8%25A1%258C.html">一键编译运行</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2591%25BD%25E4%25BB%25A4%25E8%25BE%2593%25E5%2585%25A5%25E5%2581%258F%25E5%25A5%25BD.html">命令输入偏好</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%258B%25AC%25E5%258F%25B7%25E8%25A1%25A5%25E5%2585%25A8.html">括号补全</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%2596%2587%25E6%259C%25AC%25E6%2590%259C%25E7%25B4%25A2%25E5%2581%258F%25E5%25A5%25BD%25E9%2580%2589%25E9%25A1%25B9.html">文本搜索偏好选项</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%2598%25BE%25E7%25A4%25BA%25E5%2581%258F%25E5%25A5%25BD.html">显示偏好</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E7%2595%2599%25E7%2599%25BD.html">留白</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E7%25BC%25A9%25E8%25BF%259B.html">缩进</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E8%2587%25AA%25E5%258A%25A8%25E5%258A%25A0%25E8%25BD%25BD%25E6%25A8%25A1%25E6%259D%25BF.html">自动加载模板</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E8%25A1%258C%25E5%258F%25B7.html">行号</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="vim.html">vim</a></li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="todo.html">todo</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

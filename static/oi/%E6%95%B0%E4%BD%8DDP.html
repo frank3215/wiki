@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>数位DP: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-DP tc-tagged-public" data-tags="DP public" data-tiddler-title="数位DP"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">数位DP</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月05日 15:47</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="DP">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+DP
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>问题：求满足性质的<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></span>的数的个数。</p><p>状态设计：</p><ul><li><span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">[</mo><mi>k</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>c</mi><mi>o</mi><mi>m</mi><mi>p</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">f[k][state][comp]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">m</span><span class="mord mathdefault">p</span><span class="mclose">]</span></span></span></span></span>表示已经填了<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span></span>位、是否满足性质、是否小于等于<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></span>的最后<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span></span>位。<ul><li>如果支持前导零的话，可以一直填101位后再计算答案</li><li>优点：不需要保存当前位。</li><li>详见<a class="tc-tiddlylink tc-tiddlylink-resolves" href="CF1194G%2520-%2520Another%2520Meme%2520Problem.html">CF1194G - Another Meme Problem</a>题解。</li></ul></li></ul><p>例题：<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ZJOI2010%2520-%2520%25E6%2595%25B0%25E5%25AD%2597%25E8%25AE%25A1%25E6%2595%25B0.html">ZJOI2010 - 数字计数</a>、<a class="tc-tiddlylink tc-tiddlylink-resolves" href="CF1194G%2520-%2520Another%2520Meme%2520Problem.html">CF1194G - Another Meme Problem</a>。</p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%25B1%2582%25E6%2589%2580%25E6%259C%2589%25E5%25B0%258F%25E4%25BA%258E%25E7%25AD%2589%25E4%25BA%258E%25E6%259F%2590%25E6%2595%25B0%25E7%259A%2584%25E6%2595%25B0%25E4%25B8%25AD%25E6%259C%2589%25E5%2587%25A0%25E4%25B8%25AA%25E6%2595%25B0%25E6%25BB%25A1%25E8%25B6%25B3%25E6%259D%25A1%25E4%25BB%25B6.html">求所有小于等于某数的数中有几个数满足条件</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E6%25B1%2582%25E6%2589%2580%25E6%259C%2589%25E5%25B0%258F%25E4%25BA%258E%25E7%25AD%2589%25E4%25BA%258E%25E6%259F%2590%25E6%2595%25B0%25E7%259A%2584%25E6%2595%25B0%25E7%259A%2584%25E4%25BF%25A1%25E6%2581%25AF.html">求所有小于等于某数的数的信息</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="DP.html">DP</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

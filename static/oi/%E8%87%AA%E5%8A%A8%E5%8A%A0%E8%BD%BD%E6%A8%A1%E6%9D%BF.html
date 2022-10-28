@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>自动加载模板: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-public tc-tagged-vim%E7%9A%84%E9%85%8D%E7%BD%AE" data-tags="public vim的配置" data-tiddler-title="自动加载模板"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">自动加载模板</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月10日 10:35</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="vim的配置">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+vim的配置
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>如果你希望在打开一个<code>.cpp</code>文件时就自动加载进一个模板的话，你可以用vim做到这一点！</p><h2 class=""><code>autocmd</code>：自动执行命令</h2><p>你可以在打开文件/新建文件/写入文件前/写入文件后等等<code>{event}</code>后执行一个自动命令，格式为：（详情可用<code>:help</code>了解）</p><pre class="vim hljs"><code><span class="hljs-keyword">autocmd</span> [group] {event} {pat} [++once] [++nested] {cmd}</code></pre><p>常用的一些<code>{event}</code>有：</p><ul><li><code>BufNewFile</code>：开始编辑新文件时。</li><li><code>BufWritePost</code>：保存文件时（写入文件内容后）。</li></ul><p>假设你在<code>~/a.cpp</code>处保存了你的模板文件，你可以在.vimrc内加入：</p><pre class="vim hljs"><code><span class="hljs-keyword">autocmd</span> BufNewFile *.cpp <span class="hljs-number">0</span>r ~/<span class="hljs-keyword">a</span>.cpp </code></pre><p>其中<code>*</code>是通配符，<code>*.cpp</code>表示匹配所有以<code>.cpp</code>结尾的文件名。<code>0r ~/a.cpp</code>表示在第0行后（第1行前）插入<code>~/a.cpp</code>文件的内容。</p><h2 class="">用fold折叠过长的模板</h2><p>如果你习惯在模板里定义一大堆这样的东西：</p><pre class="cpp hljs"><code>#include &lt;bits/stdc++.h&gt;
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define FOR(i,a,b) for (int i = (a); i &lt; (b); ++i)
+#define ROF(i,a,b) for (int i = (b)-1; i &gt;= (a); --i)
+#define mset(x,c) memset(x, c, sizeof(x))
+#define mem0(x) mset(x,0)
+#define mem1(x) mset(x,-1)
+#define memc(x,y) memcpy(x, y, sizeof(x));
+#define P(a,n) FOR(_,0,n) _W(a),printf("%c", " \n"[_==n-1])
+#define print(a,n) cout &lt;&lt; #a &lt;&lt; " = ";FOR(_,0,n) _W(a),printf("%c", " \n"[_==n-1])
+using namespace std;
+
+template&lt;class T&gt; void _R(T &amp;x) { cin &gt;&gt; x; }
+void _R(signed &amp;x) { scanf("%d", &amp;x); }
+void _R(int64_t &amp;x) { scanf("%lld", &amp;x); }
+void _R(double &amp;x) { scanf("%lf", &amp;x); }
+void _R(char &amp;x) { scanf(" %c", &amp;x); }
+void _R(char *x) { scanf("%s", x); }
+void R() {}
+template&lt;class T, class... U&gt; void R(T &amp;head, U &amp;... tail) { _R(head); R(tail...); }
+template&lt;class T&gt; void _W(const T &amp;x) { cout &lt;&lt; x; }
+void _W(const signed &amp;x) { printf("%d", x); }
+void _W(const int64_t &amp;x) { printf("%lld", x); }
+void _W(const double &amp;x) { printf("%.16f", x); }
+void _W(const char &amp;x) { putchar(x); }
+void _W(const char *x) { printf("%s", x); }
+template&lt;class T,class U&gt; void _W(const pair&lt;T,U&gt; &amp;x) {_W(x.fi); putchar(' '); _W(x.se);}
+template&lt;class T&gt; void _W(const vector&lt;T&gt; &amp;x) { for (auto i = x.begin(); i != x.end(); _W(*i++)) if (i != x.cbegin()) putchar(' '); }
+void W() {}
+template&lt;class T, class... U&gt; void W(const T &amp;head, const U &amp;... tail) { _W(head); putchar(sizeof...(tail) ? ' ' : '\n'); W(tail...); }
+!ifdef LOCAL
+ #define debug(...) {printf(" [" #__VA_ARGS__ "]: ");W(__VA_ARGS__);}
+!else
+ #define debug(...)
+!endif
+
+typedef vector&lt;int&gt; vi;
+typedef pair&lt;int,int&gt; pii;
+typedef long long ll;</code></pre><p>那么你可能需要每次复制模板的时候把它折叠起来，方便移动。vim本身就支持这么做。（详见<code>:help usr_28.txt</code>）</p><p>在.vimrc里面加一句：</p><pre><code>set fdm=marker</code></pre><p>再在代码块的前后加入<code>{{{</code>和<code>}}}</code>标记：</p><pre class="cpp hljs"><code><span class="hljs-comment">/*{{{*/</span>
+<span class="hljs-comment">// Code Here...</span>
+<span class="hljs-comment">/*}}}*/</span></code></pre><p>你会发现它会把标记之间的代码折叠起来！瞬间感觉清爽多了！</p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class="">无</ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="vim%25E7%259A%2584%25E9%2585%258D%25E7%25BD%25AE.html">vim的配置</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

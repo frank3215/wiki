@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>调试的技巧: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E8%B0%83%E8%AF%95 tc-tagged-public tc-tagged-todo" data-tags="调试 public todo" data-tiddler-title="调试的技巧"><p><div align="right">
+<strong><em>如你所见，这个条目还在施工中，还请耐心等待。</em></strong>
+</div></p><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">调试的技巧</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月10日 10:29</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="调试">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+调试
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="todo">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+todo
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><h2 class="">程序中的Debug语句</h2><h3 class=""><code>#define debug(x) cout &lt;&lt; #x &lt;&lt; " = " &lt;&lt; x &lt;&lt; endl</code></h3><p>其中，<code>#x</code>的意思是<code>x</code>所替换的变量的名字。这样，若<code>a[i] = 1</code>，就可以用<code>debug(a[i]);</code>输出<code>a[i] = 1</code>的语句，方便调试。美中不足的是，它并不会一并输出<code>i</code>的值。这种方法与<code>#ifdef</code>结合更加有效：</p><pre class="cpp hljs"><code><span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> DEBUG</span>
+<span class="hljs-meta">#	<span class="hljs-meta-keyword">define</span> debug(x) cout &lt;&lt; #x &lt;&lt; <span class="hljs-meta-string">" = "</span> &lt;&lt; x &lt;&lt; endl</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+<span class="hljs-meta">#	<span class="hljs-meta-keyword">define</span> debug</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></code></pre><p>这样，如果没有<code>-DDEBUG</code>的话，就不会输出调试语句，就不用每次都注释一遍了。</p><h3 class=""><code>#define meow(args...) fprintf(stderr, args)</code></h3><p>实际上，因为一般评测都会忽略<code>stderr</code>，我们也可以利用它来帮助调试。（当然，实际交上去时，输出调试语句也需要时间。如果输出太多的话<em><strong>会TLE！</strong></em>）</p><p>实际使用和<code>printf</code>一样，如可以<code>meow("i = %d, %d %d %lld", i, j, a[i], b[i][j]);</code>这样。</p><h2 class="">对拍</h2><p>作为检查程序错误的一种方法，对拍在比赛中几乎是必不可少的。对拍，即写两个程序，生成随机数据，计算答案并核对答案是否相同。如果不相同，那么肯定有一个程序出现了问题。</p><p>常见的对拍有两种姿势，不过都是利用shell的命令实现的。一般，对拍都包括这样一些命令：（相信学过C++的你能大概猜出它是什么意思）：</p><pre class="bash hljs"><code><span class="hljs-keyword">for</span> (i=1;;i++); <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> testcase<span class="hljs-variable">$i</span>
+    ./a &lt; a.in &gt; a.out
+    ./brute &lt; a.in &gt; a.ans
+    <span class="hljs-keyword">if</span> diff a.out a.ans &gt; diff.log; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> AC!
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">echo</span> WA!
+        <span class="hljs-built_in">break</span>
+    <span class="hljs-keyword">fi</span>
+<span class="hljs-keyword">done</span></code></pre><p>需要指出的一点是：因为返回值0是程序正常退出的标志，所以if实际上检查的是返回值***是否为0***。（即：若程序返回值为0则进入if，否则进入else）</p><p>当然，如果你不熟悉shell，你还可以用C++文件来实现这一功能。这归功于C++中的<code>system()</code>函数，它可以调用shell来完成shell的一些操作，如编译，运行程序等，并返回该命令的返回值。</p><pre class="cpp hljs"><code><span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    system(<span class="hljs-string">"./a &lt; a.in &gt; a.out"</span>);
+    system(<span class="hljs-string">"./brute &lt; a.in &gt; a.ans"</span>);
+    <span class="hljs-keyword">if</span> (!system(<span class="hljs-string">"diff a.out a.ans"</span>)) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"AC!"</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"WA!"</span>);
+        <span class="hljs-keyword">break</span>;
+    }
+}</code></pre><h2 class="">makefile的使用</h2><p>你可能有过这样的经历：你修正了程序，但是忘记编译了，运行对拍脚本的时候使用的仍然是之前的程序。于是你对着相同的（错误）结果百思不得其解：诶我明明改了程序啊，怎么还是有错？</p><p>这时候，你就可以求助makefile了。使用它，只要在对拍脚本**最前面**加一句<code>make</code>命令就可以方便的把所有更改过的程序重新编译啦！（<code>make</code>非常聪明：它不会重新编译没有更改过的程序）</p><p>以下是一个<code>makefile</code>的基本格式：（可执行文件名+":"+编译成可执行文件的文件名）</p><pre class="makefile hljs"><code><span class="hljs-section">all: a gen brute</span>
+
+<span class="hljs-section">a: a.cpp</span>
+    g++ -std=c++11 -g -O2 -Wall -DONLINE_JUDGE -fsanitize=address -o a a.cpp
+
+<span class="hljs-section">gen: gen.cpp</span>
+    g++ -O2 -Wall -o gen gen.cpp
+
+<span class="hljs-section">brute: brute.cpp</span>
+    g++ brute.cpp -o brute -O2 -Wall</code></pre><p>与vim中的<code>autocmd</code>和<code>:s[ubstitute]</code>命令搭配，可以事倍功半：用<code>autocmd</code>在打开<code>makefile</code>时将以上模板复制进去，再使用<code>:s</code>命令替换。</p><blockquote><div><code>make</code>命令实际上相当于<code>make all</code>。而<code>all: a gen brute</code>就使得<code>make</code>自动编译修改过的<code>a.cpp</code>、<code>gen.cpp</code>、<code>brute.cpp</code></div></blockquote></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class="">无</ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="%25E8%25B0%2583%25E8%25AF%2595.html">调试</a></li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="todo.html">todo</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

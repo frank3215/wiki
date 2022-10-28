@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>二分图判定: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E5%9B%BE%E8%AE%BA%E9%97%AE%E9%A2%98 tc-tagged-public tc-tagged-%E7%82%B9%E4%BA%8C%E6%9F%93%E8%89%B2 tc-tagged-%E5%A2%9E%E5%8A%A0%E7%BA%A6%E6%9D%9F%E5%85%83%E7%B4%A0%E7%9B%B8%E4%BA%92%E4%B8%BA%E5%87%A0%E5%B1%82%E5%90%8E%E7%BB%A7%E8%AF%A2%E9%97%AE%E7%9B%B8%E5%AF%B9%E5%90%8E%E7%BB%A7%E5%85%B3%E7%B3%BB%E6%88%96%E7%9F%9B%E7%9B%BE%E6%80%A7 tc-tagged-%E4%BA%8C%E5%88%86%E5%9B%BE" data-tags="图论问题 public 点二染色 增加约束元素相互为几层后继询问相对后继关系或矛盾性 二分图" data-tiddler-title="二分图判定"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">二分图判定</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月08日 10:27</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="点二染色">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+点二染色
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="二分图">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+二分图
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="图论问题">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+图论问题
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="增加约束元素相互为几层后继询问相对后继关系或矛盾性">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+增加约束元素相互为几层后继询问相对后继关系或矛盾性
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><ul><li>是二分图<span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext></mrow><annotation encoding="application/x-tex">\iff</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.549em;vertical-align:-0.024em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span></span></span></span>可以点二染色。</li></ul><p>例题：<a class="tc-tiddlylink tc-tiddlylink-resolves" href="luogu1330%2520-%2520%25E5%25B0%2581%25E9%2594%2581%25E9%2598%25B3%25E5%2585%2589%25E5%25A4%25A7%25E5%25AD%25A6.html">luogu1330 - 封锁阳光大学</a>、<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NOIP2010%2520-%2520%25E5%2585%25B3%25E6%258A%25BC%25E7%25BD%25AA%25E7%258A%25AF.html">NOIP2010 - 关押罪犯</a>。</p><p>判定方法：</p><ul><li>二染色判定：<a class="tc-tiddlylink tc-tiddlylink-resolves" href="luogu1330%2520-%2520%25E5%25B0%2581%25E9%2594%2581%25E9%2598%25B3%25E5%2585%2589%25E5%25A4%25A7%25E5%25AD%25A6.html">luogu1330 - 封锁阳光大学</a></li><li>并查集判定：<a class="tc-tiddlylink tc-tiddlylink-resolves" href="luogu1330%2520-%2520%25E5%25B0%2581%25E9%2594%2581%25E9%2598%25B3%25E5%2585%2589%25E5%25A4%25A7%25E5%25AD%25A6.html">luogu1330 - 封锁阳光大学</a>、<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NOIP2010%2520-%2520%25E5%2585%25B3%25E6%258A%25BC%25E7%25BD%25AA%25E7%258A%25AF.html">NOIP2010 - 关押罪犯</a>。</li></ul></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%259B%25BE%25E7%259A%2584%25E7%2582%25B9%25E5%25AE%258C%25E7%25BE%258E%25E8%25A6%2586%25E7%259B%2596.html">图的点完美覆盖</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%25A2%259E%25E5%258A%25A0%25E8%25BE%25B9%25E6%25B1%2582%25E4%25BA%258C%25E5%2588%2586%25E5%259B%25BE%25E8%2587%25B3%25E5%25A4%259A%25E6%25BB%25A1%25E8%25B6%25B3%25E5%2589%258D%25E5%2587%25A0%25E4%25B8%25AA%25E7%25BA%25A6%25E6%259D%259F.html">增加边求二分图至多满足前几个约束</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%259B%25BE%25E8%25AE%25BA%25E9%2597%25AE%25E9%25A2%2598.html">图论问题</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E7%2582%25B9%25E4%25BA%258C%25E6%259F%2593%25E8%2589%25B2.html">点二染色</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%25A2%259E%25E5%258A%25A0%25E7%25BA%25A6%25E6%259D%259F%25E5%2585%2583%25E7%25B4%25A0%25E7%259B%25B8%25E4%25BA%2592%25E4%25B8%25BA%25E5%2587%25A0%25E5%25B1%2582%25E5%2590%258E%25E7%25BB%25A7%25E8%25AF%25A2%25E9%2597%25AE%25E7%259B%25B8%25E5%25AF%25B9%25E5%2590%258E%25E7%25BB%25A7%25E5%2585%25B3%25E7%25B3%25BB%25E6%2588%2596%25E7%259F%259B%25E7%259B%25BE%25E6%2580%25A7.html">增加约束元素相互为几层后继询问相对后继关系或矛盾性</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E4%25BA%258C%25E5%2588%2586%25E5%259B%25BE.html">二分图</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

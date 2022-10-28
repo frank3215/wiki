@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>vim的使用: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-public tc-tagged-vim" data-tags="public vim" data-tiddler-title="vim的使用"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">vim的使用</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月10日 10:31</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="vim">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+vim
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><h1 class="">教程</h1><p>这里假设你已经打开了NOI Linux的终端，并且已经用<code>cd</code>命令回到了主目录下。</p><blockquote class="tc-quote"><p>这里还假设你已学会基本的vim操作，如不会可以<a class="tc-tiddlylink-external" href="https://www.baidu.com/s?ie=UTF-8&amp;wd=vim%E7%9A%84%E4%BD%BF%E7%94%A8" rel="noopener noreferrer" target="_blank">百度</a>或参考<a class="tc-tiddlylink-external" href="https://oi-wiki.org/tools/editor/vim/" rel="noopener noreferrer" target="_blank">这篇文章</a>或<a class="tc-tiddlylink-external" href="https://search.bilibili.com/all?keyword=vim" rel="noopener noreferrer" target="_blank">搜视频教程</a>或**在终端下**使用<code>vimtutor</code>命令进行学习。
+</p></blockquote><p>有一些vim选项是可以在平时练习的时候给予很大便利，但是在考试的时候输入需要耗费很多时间。还有一些即使在考试时也很容易准备好。</p><p>这里讲的都只是一个大概，因此<strong><em>强烈建议用vim自带的帮助</em></strong>查看*选项*或*命令*的含义以做更多了解：<code>:help 'number'</code>会查看<code>number</code><strong><em>选项</em></strong>的含义；<code>:help map</code>会查看<code>map</code><strong><em>命令</em></strong>的含义。（注意前面的<strong><em>选项</em></strong>有引号，后面的<strong><em>命令</em></strong>没有）</p><ul><li>如要了解更多查找的方法，请输入<code>:help help-context</code>（或者<code>:help</code>之后向下滚动一些）</li></ul><p>如果你想偷懒，也可以用<code>:h</code>命令来达到同样的目的。（<code>:h</code>是<code>:help</code>的简写）</p><blockquote class="tc-quote"><p>有意思的（普通模式）命令列表：（<code>:h</code>）</p><ul><li><code>q</code>与<code>@</code>：录制与回放宏</li><li><code>y</code>与<code>p</code>：复制与粘贴。</li><li>CTRL-P与CTRL-N：代码补全。</li><li>CTRL-U与CTRL-D：滚动半个屏幕。</li><li>A与I：进入插入模式并把光标放在行首/行末。</li><li>S：删除整行内容，保留缩进，并进入插入模式。</li><li>C：删除光标之后的内容，并进入插入模式。</li><li>J：合并多行。</li><li><code>{</code>和<code>}</code>：向前和向后移动到一个空行——如果你在不同的地方有意识空行的话，这会帮助你快速跳到代码的不同地点！</li><li><code>:tag &lt;function&gt;</code>：在用命令行中的<code>ctags</code>命令处理文件之后，可以用它来快速定位到函数的位置。</li></ul></blockquote><p>你可以通过<code>:h quickref</code>来根据你的需要找到更多命令或选项。</p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="vimdiff.html">vimdiff</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2588%2586%25E5%25B1%258F.html">分屏</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%259C%25A8vim%25E5%2586%2585%25E7%25BC%2596%25E8%25AF%2591.html">在vim内编译</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%25A4%258D%25E7%259B%2598.html">复盘</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%25AE%259A%25E4%25BD%258D%25E5%2588%25B0%25E7%25BC%2596%25E8%25AF%2591%25E5%2587%25BA%25E9%2594%2599%25E7%259A%2584%25E4%25BD%258D%25E7%25BD%25AE.html">定位到编译出错的位置</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="vim.html">vim</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

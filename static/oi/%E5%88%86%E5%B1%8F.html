@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>分屏: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-public tc-tagged-vim%E7%9A%84%E4%BD%BF%E7%94%A8" data-tags="public vim的使用" data-tiddler-title="分屏"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">分屏</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="frank3215.html">frank3215</a>2021年07月10日 10:22</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="vim的使用">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+vim的使用
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>用<code>:sp</code>和<code>:vsp</code>即可分屏。如没有参数，则默认是对目前正在编辑的文件分屏。</p><h2 class="">实际使用</h2><p>假如有一道题是<code>a</code>，你正在编辑<code>a.cpp</code>，你可以使用<code>:vsp a.in</code>和<code>:sp a.out</code>来做到同时看到<code>a.cpp</code>、<code>a.in</code>、<code>a.out</code>三个窗口并进行编辑。因为分屏实际上相当于创建了一个窗口，也可以用常规的<code>:q</code>等命令关闭。</p><p>如果开了<code>mouse=a</code>，那么就可以用鼠标调整分屏大小、与在窗口中点击来切换当前活跃的窗口。（否则你可能需要参考一下vim的帮助，并记忆许多命令才能做到同样的事情……）</p><p>可以结合之后讲到的<strong><code>map</code>命令</strong>将这个过程自动化，例子如下：</p><pre><code>nmap \s :vsp %&lt;.in&lt;cr&gt;:sp %&lt;.out&lt;cr&gt;</code></pre><h2 class="">可能遇到的问题</h2><p>在分屏并运行程序之后，你可能会看到这样一条信息：</p><pre><code>W11: Warning: File "a.out" has changed since editing started</code></pre><p>这是因为vim会保护你正在编辑的文件不被其他程序更改。</p><p>你可以通过在<code>.vimrc</code>里面加入这样一句话：</p><pre><code>set autoread</code></pre><p>来使得它（基本）会每次帮你自动加载被更改过的内容。</p><h2 class="">有关多个输入文件</h2><p>如果有多个输入文件，建议这么做：</p><pre><code>:!cp a1.in a.in</code></pre><p>而不建议更改<code>freopen</code>中的文件名或者在.vimrc中输入多个</p><pre><code>nmap \s1 :vsp %&lt;1.in&lt;cr&gt;:sp %&lt;.out&lt;cr&gt;
+nmap \s2 :vsp %&lt;2.in&lt;cr&gt;:sp %&lt;.out&lt;cr&gt;
+nmap \s3 :vsp %&lt;3.in&lt;cr&gt;:sp %&lt;.out&lt;cr&gt;
+nmap \r1 :!./%&lt; &lt; %&lt;.in
+...</code></pre><p>其原因在于：</p><ul><li>如果更改了<code>freopen</code>中的文件名，有可能会忘记改回来——我省选时曾犯过这样的错，本来可以拿100分的D1T1直接爆零QAQ……</li><li>尽管可以用<code>CTRL-A</code>与<code>CTRL-V</code>来加快.vimrc文件的输入，这件事本身是非常繁琐且完全可以避免的……</li></ul></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class="">无</ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="vim%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8.html">vim的使用</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

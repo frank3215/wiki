@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>$:/boot/boot.css: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-system " data-tags="" data-tiddler-title="$:/boot/boot.css"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title" title="此为系统条目"><span class="tc-system-title-prefix">$:/</span>boot/boot.css</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a></div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><pre class="css hljs"><code><span class="hljs-comment">/*
+Basic styles used before we boot up the parsing engine
+*/</span>
+
+<span class="hljs-comment">/*
+Error message and password prompt
+*/</span>
+
+<span class="hljs-selector-class">.tc-error-form</span> {
+    <span class="hljs-attribute">font-family</span>: sans-serif;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">20000</span>;
+    <span class="hljs-attribute">position</span>: fixed;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">255</span>, <span class="hljs-number">75</span>, <span class="hljs-number">75</span>);
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">8px</span> solid <span class="hljs-built_in">rgb</span>(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">25%</span>;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">4em</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">2em</span> <span class="hljs-number">1em</span> <span class="hljs-number">2em</span>;
+}
+
+<span class="hljs-selector-class">.tc-error-form</span> <span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.tc-error-prompt</span> {
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+
+<span class="hljs-selector-class">.tc-error-message</span> {
+    <span class="hljs-attribute">overflow</span>: auto;
+    <span class="hljs-attribute">max-height</span>: <span class="hljs-number">40em</span>;
+    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">1em</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">1em</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">white-space</span>: pre-line;
+}
+
+<span class="hljs-selector-class">.tc-password-wrapper</span> {
+    <span class="hljs-attribute">font-family</span>: sans-serif;
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">20000</span>;
+    <span class="hljs-attribute">position</span>: fixed;
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">4em</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">144px</span>; <span class="hljs-comment">/* - width/2 - paddingHorz/2 - border */</span>
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">16px</span> <span class="hljs-number">16px</span> <span class="hljs-number">16px</span> <span class="hljs-number">16px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;
+}
+
+<span class="hljs-selector-class">.tc-password-wrapper</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+    <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0.5</span>);
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">197</span>, <span class="hljs-number">235</span>, <span class="hljs-number">183</span>);
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">8px</span> solid <span class="hljs-built_in">rgb</span>(<span class="hljs-number">164</span>, <span class="hljs-number">197</span>, <span class="hljs-number">152</span>);
+}
+
+<span class="hljs-selector-class">.tc-password-wrapper</span> <span class="hljs-selector-tag">form</span> {
+    <span class="hljs-attribute">text-align</span>: left;
+}
+
+<span class="hljs-selector-class">.tc-password-wrapper</span> <span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">16px</span>;
+}
+
+<span class="hljs-selector-class">.tc-password-wrapper</span> <span class="hljs-selector-tag">input</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+}
+</code></pre></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class="">无</ul></p>
+
+父条目：
+
+<ul class="">无</ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+

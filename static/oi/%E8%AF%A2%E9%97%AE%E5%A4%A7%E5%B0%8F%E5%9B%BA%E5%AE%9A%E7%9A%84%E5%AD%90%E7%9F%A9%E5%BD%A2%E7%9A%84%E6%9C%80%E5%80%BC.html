@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>询问大小固定的子矩形的最值: OI Index
+
+— by frank3215
+</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%E8%AF%A2%E9%97%AE%E9%95%BF%E5%BA%A6%E4%B8%BAk%E7%9A%84%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%80%BC tc-tagged-%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97 tc-tagged-2D%20RMQ tc-tagged-public" data-tags="询问长度为k的窗口的最值 单调队列 [[2D RMQ]] public" data-tiddler-title="询问大小固定的子矩形的最值"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="更多" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="更多动作"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="编辑" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="编辑此条目"></button><button aria-label="关闭" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="关闭此条目"></button></span><span><h2 class="tc-title">询问大小固定的子矩形的最值</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>2021年06月29日 12:58</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="2D RMQ">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+2D RMQ
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="单调队列">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+单调队列
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="询问长度为k的窗口的最值">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+询问长度为k的窗口的最值
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="public">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#007b00;
+fill:#ffffff;
+color:#ffffff;">
+public
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div><br>
+
+<hr>
+
+<p>未链接子条目：</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="CF15D%2520-%2520Map.html">CF15D - Map</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E8%25AF%25A2%25E9%2597%25AE%25E5%2581%259A%25E5%2587%25A0%25E6%25AC%25A1%252B1%25E6%2593%258D%25E4%25BD%259C%25E6%2589%258D%25E8%2583%25BD%25E4%25BD%25BF%25E5%25BE%2597%25E8%2587%25B3%25E5%25B0%2591%25E5%25AD%2598%25E5%259C%25A8%25E4%25B8%2580%25E4%25B8%25AA%25E5%25A4%25A7%25E5%25B0%258F%25E4%25B8%25BAaxb%25E7%259A%2584%25E5%25AD%2590%25E7%259F%25A9%25E5%25BD%25A2%25E5%2585%25B6%25E4%25B8%25AD%25E6%25AF%258F%25E4%25B8%2580%25E4%25B8%25AA%25E6%2595%25B0%25E9%2583%25BD%25E7%259B%25B8%25E5%2590%258C.html">询问做几次+1操作才能使得至少存在一个大小为axb的子矩形其中每一个数都相同</a></li></ul></p>
+
+父条目：
+
+<ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E8%25AF%25A2%25E9%2597%25AE%25E9%2595%25BF%25E5%25BA%25A6%25E4%25B8%25BAk%25E7%259A%2584%25E7%25AA%2597%25E5%258F%25A3%25E7%259A%2584%25E6%259C%2580%25E5%2580%25BC.html">询问长度为k的窗口的最值</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%258D%2595%25E8%25B0%2583%25E9%2598%259F%25E5%2588%2597.html">单调队列</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="2D%2520RMQ.html">2D RMQ</a></li></ul><p>因为本博客暂不支持评论功能，想要留言还请移步<a class="tc-tiddlylink-external" href="https://www.cnblogs.com/frank3215/p/comments.html" rel="noopener noreferrer" target="_blank">我的博客园</a>。也可以通过<a class="tc-tiddlylink-external" href="mailto:frank3215@163.com" rel="noopener noreferrer" target="_blank">我的邮箱</a><code>frank3215@163.com</code>或<a class="tc-tiddlylink-external" href="https://www.luogu.com.cn/user/73915" rel="noopener noreferrer" target="_blank">我的洛谷帐号</a><code>frank3215</code>私信联系我。</p></div></p>
+</section>
+</body>
+</html>
+
